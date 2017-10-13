@@ -1,0 +1,12 @@
+---
+
+- name: Add pytorch user
+  user: name="{{pytorch_username}}"
+        shell=/bin/bash
+
+- name: Push SSH keys to pytorch user
+  authorized_key: user="{{pytorch_username}}"
+                  key="{{item}}"
+  with_file:
+      - "{{ pytorch_authorized_keys }}"
+  when: pytorch_authorized_keys is defined

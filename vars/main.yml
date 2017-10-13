@@ -1,0 +1,6 @@
+---
+
+pytorch_required_debian_packages:
+    - python3-pip
+    - python3-tk
+    - git
