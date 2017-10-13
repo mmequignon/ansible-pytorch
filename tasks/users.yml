@@ -3,6 +3,7 @@
 - name: Add pytorch user
   user: name="{{pytorch_username}}"
         shell=/bin/bash
+  become: true
 
 - name: Push SSH keys to pytorch user
   authorized_key: user="{{pytorch_username}}"
@@ -10,3 +11,4 @@
   with_file:
       - "{{ pytorch_authorized_keys }}"
   when: pytorch_authorized_keys is defined
+  become: true
