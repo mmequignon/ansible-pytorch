@@ -1,10 +1,10 @@
 ---
 
 pytorch_install_type: standard      # standard / cuda
-pytorch_authorized_keys: ""        # files/authorized_keys
+pytorch_authorized_keys: "files/pub_key"        # files/authorized_keys
 pytorch_username: pytorch
-pytorch_workdir: /home/{{ pytorch_user }}/pytorch
-pytorch_package_url: "{{
-    pytorch_install_type == 'standard' and
-    'http://download.pytorch.org/whl/cu75/torch-0.2.0.post3-cp35-cp35m-manylinux1_x86_64.whl' or
-    'http://download.pytorch.org/whl/cu80/torch-0.2.0.post3-cp35-cp35m-manylinux1_x86_64.whl' }}"
+pytorch_workdir: "/home/{{ pytorch_username }}/pytorch"
+pytorch_buildout_venv_path: "{{ pytorch_workdir }}/sandbox"
+pytorch_buildout_bootstrap_path: "{{ pytorch_workdir }}/bootstrap.py"
+pytorch_buildout_bin_path: "{{ pytorch_workdir }}/bin/buildout"
+pytorch_buildout_config_path: "{{ pytorch_workdir }}/buildout.cfg"
