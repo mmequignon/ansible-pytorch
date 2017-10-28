@@ -1,3 +1,16 @@
 ---
 
-- include: install_buildout.yml
+- name: Prepare the Python virtual environment
+  shell: "{{ pytorch_buildout_venv_cmd }}"
+  args:
+    creates: "{{ pytorch_buildout_venv_path }}"
+  become: true
+  become_user: "{{ pytorch_username }}"
+
+- name: Install python packages
+  pip:
+    name: "{{ item }}"
+    virtualenv: "{{ pytorch_buildout_venv_path }}"
+  with_items: "{{ pytorch_python_packages }}"
+  become: true
+  become_user: "{{ pytorch_username }}"
