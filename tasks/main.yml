@@ -2,6 +2,7 @@
 
 - block:
     - include: users.yml
-    - include: install.yml
+    - include: install_dependancies.yml
+    - include: install_pytorch.yml
   when: (ansible_distribution == 'Debian' and ansible_distribution_version == '9') or
         (ansible_distribution == 'Ubuntu' and ansible_distribution_version == '16.04')
