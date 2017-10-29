@@ -18,4 +18,4 @@ pytorch_python_packages:
     - matplotlib
     - torchvision
 
-pytorch_buildout_venv_cmd: "virtualenv -p python3 {{ pytorch_buildout_venv_path }}"
+pytorch_venv_cmd: "virtualenv -p python3 {{ pytorch_venv_path }}"
