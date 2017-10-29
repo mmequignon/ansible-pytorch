@@ -5,3 +5,4 @@ pytorch_authorized_keys: "files/pub_key"        # files/authorized_keys
 pytorch_username: pytorch
 pytorch_workdir: "/home/{{ pytorch_username }}/pytorch"
 pytorch_venv_path: "{{ pytorch_workdir }}/sandbox"
+pytorch_project_repository: None

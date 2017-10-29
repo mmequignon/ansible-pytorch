@@ -1,5 +1,18 @@
 ---
 
+- shell: "{{ pytorch_check_project_repository }}"
+  register: validity_check
+  ignore_errors: true
+
+- name: Deploy Pytorch project
+  git:
+    repo: "{{ pytorch_project_repository }}"
+    clone: true
+    dest: "{{ pytorch_workdir }}"
+  when: validity_check.rc == 0
+  become: true
+  become_user: "{{ pytorch_username }}"
+
 - name: Prepare the Python virtual environment
   shell: "{{ pytorch_venv_cmd }}"
   args:

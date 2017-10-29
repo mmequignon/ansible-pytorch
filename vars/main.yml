@@ -19,3 +19,5 @@ pytorch_python_packages:
     - torchvision
 
 pytorch_venv_cmd: "virtualenv -p python3 {{ pytorch_venv_path }}"
+
+pytorch_check_project_repository: "git ls-remote {{ pytorch_project_repository }}"
