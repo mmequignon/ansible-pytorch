@@ -17,6 +17,8 @@ pytorch_python_packages:
     - numpy
     - matplotlib
     - torchvision
+    - scipy
+    - scikit-learn
 
 pytorch_venv_cmd: "virtualenv -p python3 {{ pytorch_venv_path }}"
 
