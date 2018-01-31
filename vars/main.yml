@@ -6,6 +6,10 @@ pytorch_required_debian_packages:
     - python-virtualenv
     - python3-virtualenv
     - git
+    - x11-apps
+    - dbus
+    - dbus-x11
+    - xauth
 
 pytorch_package_url: "{{
     pytorch_install_type == 'standard' and
