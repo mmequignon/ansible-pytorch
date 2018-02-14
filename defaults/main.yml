@@ -1,7 +1,7 @@
 ---
 
 pytorch_install_type: standard      # standard / cuda
-pytorch_authorized_keys: "files/pub_key"        # files/authorized_keys
+pytorch_authorized_keys: "files/add_your_public_key_here"  # files/authorized_keys
 pytorch_username: pytorch
 pytorch_workdir: "/home/{{ pytorch_username }}/pytorch"
 pytorch_venv_path: "{{ pytorch_workdir }}/sandbox"
